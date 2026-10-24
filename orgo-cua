@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+"""orgo-cua launcher: see orgo_cua.py."""
+import sys
+
+from orgo_cua import main
+
+sys.exit(main())
