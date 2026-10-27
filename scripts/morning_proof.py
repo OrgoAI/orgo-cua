@@ -269,7 +269,7 @@ class RelayProof:
         self.cli = orgo_cua.Cli(self.orgo, ws, orgo_cua.State(self.res.out_dir / "state.json"), buf, buf,
                                 self.sleep, self.clock)
         code_id, code = self.cua.pair(RELAY_NAME)
-        self.res.say(f"relay: one-time code {code_id} from `cua host pair` on this Mac")
+        self.res.say(f"relay: pairing request {code_id} from `cua host pair` on this Mac (the code is never printed)")
         t = self.clock()
         rc = self.cli.up(RELAY_NAME, 4, 1, code, script)
         self.res.log(f"$ orgo-cua up --name {RELAY_NAME} --pair\n{buf.getvalue()}")
