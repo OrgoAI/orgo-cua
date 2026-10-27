@@ -209,6 +209,8 @@ class HelperTests(Base):
             "do click 419 365",  # 447,389 on the 1280x720 desktop, in Cua's 1200x675 image
             "spaces ls --json",
         ])
+        self.assertIn("relay: pairing request pc_0123456789abcdef from `cua host pair`", self.result)
+        self.assertNotIn("one-time code pc_", self.result)
         self.assertIn("relay: `cua spaces ls` on this Mac lists it: " + SPACE[:14] + "...", self.result)
         self.assertIn("pressed (xmessage exit 7)", self.result)
         self.assertIn("still lists it: no", self.result)
